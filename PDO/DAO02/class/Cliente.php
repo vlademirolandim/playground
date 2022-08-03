@@ -67,7 +67,7 @@ class Cliente{
      */
     public function getDtNasc()
     {
-        return $this->dtNasc;
+        return $this->dtNasc->format("d/m/Y");
     }
 
     /**
