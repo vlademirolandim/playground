@@ -3,7 +3,7 @@ class Sql{
     private $conn;
 
     public function __construct(){
-        $this->conn=new PDO('sqlite::memory:'); // __DIR__ . DIRECTORY_SEPARATOR .  'clientes.sqlite');
+        $this->conn=new PDO('sqlite::memory:');
         $this->criaDados();
     }
 
