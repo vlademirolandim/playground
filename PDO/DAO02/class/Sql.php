@@ -26,8 +26,8 @@ class Sql{
     
         $sql="CREATE TABLE IF NOT EXISTS clientes (
             ID_CLIENTE INTEGER PRIMARY KEY AUTOINCREMENT,
-            NOME VARCHAR(255) NOT NULL ),
-            DTNASC DATE
+            NOME VARCHAR(255) NOT NULL ,
+            DTNASC TEXT
             ); ";
     
         $stmt=$this->conn->prepare($sql);

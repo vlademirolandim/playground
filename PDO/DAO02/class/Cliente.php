@@ -2,6 +2,7 @@
 class Cliente{
     private $idCliente;
     private $nome;
+    private $dtNasc;
 
     /**
      * Get the value of idCliente
@@ -48,6 +49,7 @@ class Cliente{
             $row = $results[0];
             $this->setIdCliente($row["ID_CLIENTE"]);
             $this->setNome($row["NOME"]);
+            $this->setDtNasc($row["DTNASC"]);
         }
     }
 
@@ -55,7 +57,26 @@ class Cliente{
     {
         return json_encode(array(
             "idCliente" => $this->getIdCliente(),
-            "nome" => $this->getNome()
+            "nome" => $this->getNome(),
+            "dtNasc" => $this->getDtNasc()
         ));
+    }
+
+    /**
+     * Get the value of dtNasc
+     */
+    public function getDtNasc()
+    {
+        return $this->dtNasc;
+    }
+
+    /**
+     * Set the value of dtNasc
+     */
+    public function setDtNasc($dtNasc): self
+    {
+        $this->dtNasc = new DateTime($dtNasc);
+
+        return $this;
     }
 }
