@@ -26,11 +26,15 @@ class Sql{
     
         $sql="CREATE TABLE IF NOT EXISTS clientes (
             ID_CLIENTE INTEGER PRIMARY KEY AUTOINCREMENT,
-            NOME VARCHAR(255) NOT NULL );
-        ";
+            NOME VARCHAR(255) NOT NULL ),
+            DTNASC DATE
+            ); ";
     
         $stmt=$this->conn->prepare($sql);
         $stmt->execute();
+        $stmt=$this->conn->prepare("insert into clientes ( nome , dtnasc ) values ( 'Diniz' , '1960-09-10' );");
+        $stmt->execute();
+
     
     }
     
